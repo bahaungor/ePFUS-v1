@@ -49,9 +49,13 @@ function createGridContainerContent(){
         if(concern.status == "Closed") concernStatus.textContent = "⬤";
         const concernTime = document.createElement("div");
         concernTime.className = "concern-time";
-        if((new Date()) - new Date(concern.time) < 15) concernTime.textContent = "🙂";
-        if((new Date()) - new Date(concern.time) < 25) concernTime.textContent = "😐";
-        if((new Date()) - new Date(concern.time) > 35) concernTime.textContent = "🙁";
+        if((new Date().getTime()/(100*60*60*24)) - new Date(concern.time) < 15){
+            concernTime.textContent = "🙂";
+        } else if((new Date().getTime()/(100*60*60*24)) - new Date(concern.time) < 25) {
+            concernTime.textContent = "😐";
+        } else if((new Date().getTime()/(100*60*60*24)) - new Date(concern.time) > 35) {
+            concernTime.textContent = "🙁";
+        }
         concernsGridContainer.appendChild(concernGrid);
         concernGrid.appendChild(concernTitle);
         concernGrid.appendChild(concernProblem);
@@ -110,7 +114,7 @@ function submitConcernForm(e){
             concernFormRank.value, 
             concernFormTitle.value, 
             concernFormStatus.value, 
-            (new Date()), 
+            ((new Date().getTime()/(100*60*60*24))), 
             concernFormProblem.value, 
             concernFormRC.value, 
             concernFormCM.value, 
@@ -135,9 +139,13 @@ function openConcernForm(){
     if(pfusItems[index].status == "Rootcause Investigation") concernFormStatus.selectedIndex  = 1;
     if(pfusItems[index].status == "Countermeasure Clarification") concernFormStatus.selectedIndex  = 2;
     if(pfusItems[index].status == "Closed") concernFormStatus.selectedIndex  = 3;
-    if((new Date()) - new Date(pfusItems[index].time) < 15) concernFormTime.value = "🙂";
-    if((new Date()) - new Date(pfusItems[index].time) < 25) concernFormTime.value = "😐";
-    if((new Date()) - new Date(pfusItems[index].time) > 35) concernFormTime.value = "🙁";
+    if((new Date()).getTime()/(24*60*60*100) - new Date(pfusItems[index].time).getTime() < 15){
+        concernFormTime.value = "🙂";
+    } else if((new Date()).getTime()/(24*60*60*100) - new Date(pfusItems[index].time).getTime() < 25) {
+        concernFormTime.value = "😐";
+    } else if((new Date()).getTime()/(24*60*60*100) - new Date(pfusItems[index].time).getTime() > 35) {
+        concernFormTime.value = "🙁";
+    }
     concernFormProblem.value = pfusItems[index].problem;
     concernFormRC.value = pfusItems[index].rc;
     concernFormCM.value = pfusItems[index].cm;
