@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./favicon.ico?" type="image/x-icon">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <div class="main">
+        <header class="header">e-PFUS V1</header>
+        <main class="container">
+            <button class="add-new-concern">+ Add Concern</button>
+            <div class="library">
+                <div class="concern-list-title">Concerns</div>
+                <div class="concern-list-subtitles">
+                    <div class="concern-list-subtitle">Concern</div>
+                    <div class="concern-list-subtitle">Problem</div>
+                    <div class="concern-list-subtitle">Assigned</div>
+                    <div class="concern-list-subtitle">Status</div>
+                    <div class="concern-list-subtitle">Time</div>
+                </div>
+                <div class="gray-seperator"></div>
+                <div class="concerns-grid-container">
+                    <div class="concern-grid">
+                        <div class="concern-title">Steering Column Abnormal Noise</div>
+                        <div class="concern-problem">Steering column cannot be set while other issues continues. Also cannot do something else.</div>
+                        <div class="concern-resp-eng">BU</div>
+                        <div class="concern-status">◔</div>
+                        <div class="concern-time">😐🙁</div>
+                    </div>
+                    <div class="concern-grid">
+                        <div class="concern-title">Break Pad Abnormal Noise</div>
+                        <div class="concern-problem">Steering column cannot be set while other issues continues. Also cannot do something else.</div>
+                        <div class="concern-resp-eng">BU</div>
+                        <div class="concern-status">◔</div>
+                        <div class="concern-time">🙂😐</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">Copyright © 2022 Bahadir UNGOR</footer>
+        <div class="concern-form-overlay">
+            <div class="concern-form-container">
+                <form class="concern-form" action="" method="post">
+                    <div class="concern-form-first-row">
+                        <div class="responsible-section">
+                            <div class="concern-first-row-label">Resp</div>
+                            <input class="concern-form-resp-eng-input" type="text" name="resp-eng-input" id="resp-eng-input" minlength="2" maxlength="2" autocomplete="off" required>
+                        </div>
+                        <div class="rank-section">
+                            <div class="concern-first-row-label">Rank</div>
+                            <input class="concern-form-rank-input" type="text" name="rank" id="rank" maxlength="1" autocomplete="off" required>
+                        </div>
+                        <div class="title-section">
+                            <div class="concern-first-row-label"><span style="color: red;">Confidential</span> | Current Task by Current Responsible</div>
+                            <input class="concern-form-concern-title-input" type="text" name="concern-title" id="concern-title" maxlength="60" autocomplete="off" required>
+                        </div>
+                        <div class="status-section">
+                            <div class="concern-first-row-label">Status</div>
+                            <select name="concern-form-status-input" id="concern-form-status-input">
+                                <option value="Problem Clarification">◔</option>
+                                <option value="Rootcause Investigation">◑</option>
+                                <option value="Countermeasure Clarification">◕</option>
+                                <option value="Closed">⬤</option>
+                            </select>
+                        </div>
+                        <div class="time-section">
+                            <div class="concern-first-row-label">Time</div>
+                            <input class="concern-form-time-input" type="text" name="time" id="time" readonly>    
+                        </div>
+                    </div>
+                    <div class="concern-form-area">
+                        <div class="concern-form-area-grids">
+                            <label class="concern-form-problem-clarification-label concern-form-label" for="problem-clarification">Problem Clarification</label>
+                            <textarea class="concern-form-problem-clarification-input" name="problem-clarification" id="problem-clarification" cols="30" rows="6" required></textarea>    
+                        </div>
+                        <div class="concern-form-area-grids">
+                            <label class="concern-form-trend-area-label concern-form-label" for="trend-area">Trend</label>
+                            <textarea class="concern-form-trend-area-input" name="trend-area" id="trend-area" cols="30" rows="6"></textarea>    
+                        </div>
+                        <div class="concern-form-area-grids">
+                            <label class="concern-form-rc-label concern-form-label" for="rc">Root Cause Analysis</label>
+                            <textarea class="concern-form-rc-input" name="rc" id="rc" cols="30" rows="6" required></textarea>    
+                        </div>
+                        <div class="concern-form-area-grids">
+                            <label class="concern-form-cm-label concern-form-label" for="cm">Countermeasure</label>
+                            <textarea class="concern-form-cm-input" name="cm" id="cm" cols="30" rows="6" required></textarea>    
+                        </div>
+                        <div class="concern-form-area-grids">
+                            <label class="concern-form-reflection-label concern-form-label" for="reflection">Reflection</label>
+                            <textarea class="concern-form-reflection-input" name="reflection" id="reflection" cols="30" rows="6"></textarea>        
+                        </div>
+                        <div class="concern-form-area-grids">
+                            <label class="concern-form-next-action-label concern-form-label" for="next-action">Next Actions</label>
+                            <textarea class="concern-form-next-action-input" name="next-action" id="next-action" cols="30" rows="6" required></textarea>        
+                        </div>
+                    </div>
+                    <div class="concern-form-button-container">
+                        <button class="concern-form-submit-button concern-form-button" type="submit">Submit</button>
+                        <button class="concern-form-cancel-button concern-form-button" type="button">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

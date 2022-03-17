@@ -1,0 +1,258 @@
+:root{
+    --white: #fff;
+    --gray: #f0eef1;
+    --green: rgb(105, 247, 105);
+    --red: rgb(255, 118, 118);
+    --blue: #4285F4;
+    --shadow: 0px 2px 2px lightgray;
+}
+/*CSS RESET*/
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    font-family: 'Roboto', sans-serif;
+}
+
+.header{
+    padding: 4vh 5vw;
+    font-size: 2rem;
+    box-shadow: var(--shadow);
+    background-color: var(--white);
+    z-index: 1;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--gray);
+}
+
+.container{
+    padding: 20px 20px;
+    flex: 1;
+    background-color: var(--gray);
+    display: flex;
+    flex-direction: column;
+}
+
+.footer{
+    margin-top: auto;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 15px 15px;
+}
+
+/*Add new book*/
+.add-new-concern{
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    align-self: flex-end;
+    border: none;
+    background-color: var(--blue);
+    font-size: 1rem;
+    border-radius: 5px;
+    color: var(--white);
+    cursor: pointer;
+}
+
+/*CONCERN LIST STARTS HERE*/
+.library{
+    display: grid;
+    font-size: 0.9rem;
+}
+.concern-list-title{
+    background-color: rgb(116, 116, 116);
+    color: var(--white);
+    padding: 5px;
+}
+.concern-list-subtitles{
+    display: grid;
+    grid-template-columns: 5fr 9fr 70px 70px 70px;
+    gap: 10px;
+    background-color: var(--white);
+    padding: 5px;
+}
+
+.concern-list-subtitles .concern-list-subtitle:nth-child(3),
+.concern-list-subtitles .concern-list-subtitle:nth-child(4),
+.concern-list-subtitles .concern-list-subtitle:nth-child(5){
+    text-align: center;
+}
+
+.gray-seperator{
+    height: 1px;
+    background-color: rgb(66, 66, 66);
+}
+.concerns-grid-container{
+    display: grid;
+    gap: 1.5px;
+}
+.library .concern-grid{
+    display: grid;
+    gap: 10px;
+    align-items: center;
+    background-color: var(--white);
+    grid-template-columns: 5fr 9fr 70px 70px 70px;
+    padding: 5px;
+    cursor: pointer;
+}
+.concern-grid *:nth-child(3),
+.concern-grid *:nth-child(4),
+.concern-grid *:nth-child(5){
+    text-align: center;
+}
+.concerns-grid-container .concern-status{
+    font-size: 1.7rem;
+}
+.concerns-grid-container .concern-time{
+    font-size: 1.2rem;
+}
+
+/*POPUP STARTS HERE*/
+.concern-form-overlay{
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.411);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none; /*display: none*/
+}
+
+.concern-form-container{
+    background-color: var(--gray);
+    padding: 0px 25px;
+    z-index: 3;
+    justify-items: center;
+    font-size: 1rem;
+    white-space: nowrap;
+    display: none; /*display: none*/
+    width: 100%;
+    position: absolute;
+    min-height: 100vh;
+}
+.pop-up-active{
+    display: grid;
+}
+
+.concern-form{
+    display: grid;
+    width: 100%;
+}
+.concern-form-first-row{
+    display: flex;
+    margin-bottom: 20px;
+}
+.concern-form-zero-row{
+    display: flex;
+}
+
+.concern-form-area{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 20px;
+}
+
+.responsible-section,
+.rank-section,
+.status-section,
+.time-section,
+.concern-form-resp-eng-input,
+.concern-form-rank-input,
+.concern-form-status-input,
+.concern-form-time-input{
+    width: 50px;
+    height: 60px;
+}
+.concern-form-resp-eng-input,
+.concern-form-rank-input,
+.concern-form-status-input,
+.concern-form-time-input{
+    padding-top: 20px;
+    text-align: center;
+    outline: none;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+.concern-form #concern-form-status-input{
+    height: 100%;
+    width: 50px;
+    font-size: 2rem;
+    padding-left: 10px;
+    padding-top: 13px;
+    appearance: none;
+    outline: none;
+}
+.title-section{
+    flex: 1;
+    text-align: center;
+    min-width: 450px;
+}
+
+.concern-first-row-label{
+    position: relative;
+    bottom: -20px;
+    text-align: center;
+    color: gray;
+}
+
+.concern-form-concern-title-input{
+    width: 100%;
+    height: 60px;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    outline: none;
+    text-transform: capitalize;
+}
+
+.concern-form-area-grids{
+    display: grid;
+}
+.concern-form-label{
+    background-color: rgb(214, 220, 229);
+    padding: 3px 5px;
+    font-weight: 600;
+}
+.concern-form-problem-clarification-input,
+.concern-form-trend-area-input,
+.concern-form-rc-input,
+.concern-form-cm-input,
+.concern-form-reflection-input,
+.concern-form-next-action-input{
+    outline: none;
+    padding: 5px;
+    border: none;
+    resize: none;
+}
+.concern-form-button-container{
+    display: flex;
+    justify-content: end;
+    padding: 15px 10px;
+    gap: 25px;
+}
+.concern-form-button{
+    padding: 5px 15px;
+    height: 35px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 10px;
+}
+.concern-form-submit-button{
+    background-color: rgb(105, 247, 105);
+}
+.concern-form-cancel-button{
+    background-color: crimson;
+}
